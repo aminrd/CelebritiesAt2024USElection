@@ -1,5 +1,9 @@
 .gallery-item img {
     transition: transform 0.3s ease;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 25% 25%;
 }
 
 .gallery-item img:hover {
@@ -12,5 +16,5 @@
 }
 
 .republican{
-  filter: sepia(100%) hue-rotate(-50deg) saturate(400%);
+  filter: sepia(100%) hue-rotate(-55deg) saturate(400%);
 }
