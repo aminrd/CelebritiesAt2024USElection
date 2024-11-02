@@ -1,9 +1,13 @@
 .gallery-item img {
     transition: transform 0.3s ease;
-    width: 150px;
-    height: 200px;
+    width: 130px;
+    height: 150px;
     object-fit: cover;
-    object-position: 25% 25%;
+    object-position: 50% 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .gallery-item img:hover {
