@@ -38,10 +38,15 @@ class Republican extends Celebrity {
   }
 }
 
-function add_celebrities_to_container(celebrities, image_container_id){
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function add_celebrities_to_container(celebrities, image_container_id){
   let container = document.getElementById(image_container_id);
   for (let i = 0; i < celebrities.length; i++) {
     container.innerHTML += celebrities[i].render();
+    await sleep(80);
   }
 }
 
@@ -66,7 +71,6 @@ let democrats = [
   new Democrat("Kerry Washington", "./photos/Kerry_Washington.jpg", "https://www.usatoday.com/story/news/politics/elections/2024/10/28/kerry-washington-kamala-harris-olivia-pope-wisconsin/75885917007/"),
   new Democrat("Olivia Wilde", "./photos/Olivia_Wilde.jpg", "https://en.wikipedia.org/wiki/List_of_Kamala_Harris_2024_presidential_campaign_non-political_endorsements"),
   new Democrat("Shonda Rhimes", "./photos/Shonda_Rhimes.jpg", "https://en.wikipedia.org/wiki/List_of_Kamala_Harris_2024_presidential_campaign_non-political_endorsements"),
-
   new Democrat("Jensen Ackles", "./photos/Jensen_Ackles.jpg", ""),
   new Democrat("Nick Adams", "./photos/Nick_Adams.jpg", ""),
   new Democrat("Uzo Aduba", "./photos/Uzo_Aduba.jpg", ""),
@@ -718,7 +722,6 @@ let republicans = [
   new Republican("Vicki Hollub", "./photos/Vicki_Hollub.jpg", ""),
   new Republican("Kelcy Warren", "./photos/Kelcy_Warren.jpg", ""),
 ]
-
 
 add_celebrities_to_container(democrats, "democrats-image-container");
 add_celebrities_to_container(republicans, "republicans-image-container");
