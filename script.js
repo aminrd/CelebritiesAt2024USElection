@@ -11,14 +11,7 @@ class Celebrity {
   }
 
   render(){
-    return `<div class="col">
-                <div class="position-relative gallery-item" style="cursor: pointer;">
-                    <img src=${this.src} alt="${this.name}" class="${this.party}">
-                    <div class="position-absolute top-50 start-50 translate-middle text-center d-none">
-                        <div class="bg-secondry bg-opacity-70 text-white px-4 py-2" onclick="NewTab('${this.link}');">Reference</a></div>
-                    </div>
-                </div>
-            </div>`;
+    return `<div class="col" onclick="NewTab('${this.link}');"><div class="position-relative gallery-item" style="cursor: pointer;"><img src=${this.src} alt="${this.name}" class="${this.party}"></div></div>`;
   }
 }
 
@@ -46,7 +39,7 @@ async function add_celebrities_to_container(celebrities, image_container_id){
   let container = document.getElementById(image_container_id);
   for (let i = 0; i < celebrities.length; i++) {
     container.innerHTML += celebrities[i].render();
-    await sleep(80);
+    await sleep(50);
   }
 }
 
